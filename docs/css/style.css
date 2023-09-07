@@ -1,0 +1,807 @@
+@font-face {
+	font-family: 'GmarketSansMedium';
+	src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+html > body {
+	font-family: 'GmarketSansMedium';
+	text-underline-position: under;
+}
+
+/* 라이브러리 */
+.con-min-width {
+	min-width: var(--site-width);
+}
+
+.con {
+	width: var(--site-width);
+}
+
+/* 커스텀 */
+:root {
+	--site-width: 1080px;
+}
+
+/* 탑바 구현 시작 */
+.top-bar {
+	background-color: #fff;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	z-index: 100;
+}
+
+.top-bar__menu-box-1 > ul > li > a {
+	display: flex;
+	height: 100%;
+	align-items: center;
+	padding: 0 30px;
+	position: relative;
+}
+
+.top-bar__menu-box-1 ul > li:hover > a {
+	text-decoration: underline;
+}
+
+.top-bar__menu-box-1 > ul > li > a::after {
+	content: "";
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	width: 0;
+	height: 1.5px;
+	background-color: black;
+	transition: width .3s;
+}
+
+.top-bar__menu-box-1 > ul > li:hover > a::after {
+	width: 100%;
+}
+
+.top-bar__menu-box-1 > ul > li > div {
+	display: none;		
+	position: absolute;
+	left: 0;
+	width: 100%;
+	background-color: white;
+	transform: translateY(1px);
+}
+
+.top-bar__menu-box-1 > ul > li:hover > div {
+	display: block;
+}
+
+/* 2~3차 메뉴 아이템 텍스트 공통 속성  */
+.top-bar__menu-box-1 > ul > li > div > div ul > li > a {
+	display: block;	
+	text-align: center;				
+}
+
+.top-bar__menu-box-1 > ul > li > div > div > ul {
+	margin: 30px 0;
+}
+
+/* 2차 메뉴 아이템 텍스트 */
+.top-bar__menu-box-1 > ul > li > div > div > ul > li > a {			
+	padding: 20px 0;
+}
+
+/* 3차 메뉴 아이템 텍스트 */
+.top-bar__menu-box-1 > ul > li > div > div > ul > li > ul > li > a {
+	padding: 10px 0;
+	font-size: 14px;
+	color: #444;
+}
+
+.btn-go-submit {
+	background-color: #fede22;
+	align-self: center;
+	display: block;
+	padding: 15px;
+	border-radius: 30px;
+}
+
+.globe-img > img {
+	transition: opacity .3s;
+	cursor: pointer;	
+}
+
+.globe-img:hover > img {
+	opacity: 0.5;
+}
+/* 탑바 구현 끝 */
+
+/* 메인 섹션 배너 구현 시작 */
+.section-1 > .section-con {
+	background-image: url(https://kakaobank.com/static/images/web/renewal/main-bg3.png);			
+	width: 1200px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center 0;
+	position: relative;		
+}
+
+.section-1 > .background-line {
+	position: absolute;	
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 800px;
+	background-color: #ffef6b;
+	z-index: -1;
+}
+
+.section-1__text-box {
+	position: absolute;	
+	top: 175px;
+	left: 90px;
+}
+
+.app-store-btn-group > ul {
+	gap: 0 10px;
+}
+
+.app-store-btn-group > ul > li > a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 178px;
+	height: 56px;
+	border: 1px solid rgba(255,255,255, .3);
+	border-radius: 12px;
+	font-size: 16.2px;
+	font-weight: bold;
+	color: #333;
+	background: #fff;
+	gap: 0 10px;
+	padding: 3px 0 0 0;
+}
+
+.app-store-btn-group > ul > li:hover > a {
+	text-decoration: underline;
+}
+
+.app-store-btn-group > ul > li > a::before {
+	content: "";
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background-image: url(https://kakaobank.com/static/images/web/img_kabang_220615.png);
+	background-repeat: no-repeat;	
+	background-position: -341px -292px;
+	margin-top: -4px;
+}
+
+.app-store-btn-group > ul > li:last-child > a::before {	
+	background-position: -371px -292px;
+}
+/* 메인 섹션 배너 끝 */
+
+/* 배너 1~5 구현 시작 */
+.banner-box-type {
+	height: 750px;	
+}
+
+.banner-box-type > .con {
+	display: flex;
+	height: 100%;
+}
+
+.banner-box-type > .con > div {
+	position: relative;
+}
+
+.banner-box-type > .con > div:first-child {
+	width: 55%;			
+}
+
+.banner-box-type > .con > div:last-child {
+	width: 45%;			
+}
+
+.banner-box-type-between-pad {
+	background-color: #fafafa;
+	height: 32px;
+}
+
+/* 배너박스 공통 디자인 시작 */
+.banner-box-type .btn-box > a {	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #f6f6f6;
+	width: 258px;
+	height: 56px;		
+	color: #333;
+	border-radius: 10px;	
+}
+
+.banner-box-type .btn-box > a::after {
+	content: ">";
+	margin-left: 8px;
+}
+
+.banner-box-type .btn-box > a:hover > span {
+	text-decoration: underline;
+}
+/* 배너박스 공통 디자인 끝 */
+
+
+/* 배너박스 1 구현 시작 */
+.banner-box-type-1 .img-box {
+	position: absolute;	
+	left: 30px
+}
+
+.banner-box-type-1 .img-box > img {
+	width: 473px;
+}
+
+.banner-box-type-1 .cont-box {
+	position: absolute;
+	top: 220px;
+	left: 40px;
+}
+/* 배너박스 1 구현 끝 */
+
+/* 배너박스 2 구현 시작 */
+.banner-box-type-2 {	
+	overflow: hidden;
+}
+
+.banner-box-type-2 .cont-box {
+	position: absolute;
+	top: 172px;
+	left: 65px;	
+}
+
+.banner-box-type-2 .btn-box > a {	
+	width: 158px;
+	height: 56px;			
+}
+
+.banner-box-type-2 .cont-box-img > img {
+	width: 440px;
+}
+
+.banner-box-type-2 .img-box {
+	position: absolute;	
+	top: 50px;
+	left: 75px;
+}
+
+.banner-box-type-2 .img-box > img {
+	width: 409px;
+	height: 722px;
+	transition: transform 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s, opacity 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s;	
+	opacity: 0;
+	transform: translateX(100%);
+}
+
+.banner-box-type-2 .img-box.active > img {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+/* 배너박스 2 구현 끝 */
+
+/* 배너박스 3 구현 시작 */
+.banner-box-type-3 .img-box {
+	position: absolute;
+	top: 60px;
+	left: 60px;
+}
+
+.banner-box-type-3 .img-box > img {
+	width: 459px;
+	height: 607px;
+}
+
+.banner-box-type-3 .cont-box {
+	position: absolute;
+	top: 185px;
+	left: 30px;
+}
+/* 배너박스 3 구현 끝 */
+
+/* 배너박스 4 구현 시작 */
+.banner-box-type-4 .cont-box {
+	position: absolute;
+	top: 180px;
+	left: 120px;
+}
+
+.banner-box-type-4 .img-box {
+	position: absolute;	
+	top: 130px;
+}
+
+.banner-box-type-4 .img-box > img {
+	width: 492px;
+	height: 408px;
+}
+/* 배너박스 4 구현 끝 */
+
+/* 배너박스 5 구현 시작 */
+.banner-box-type-5 {			
+	background-image: url(https://kakaobank.com/static/images/web/home_map.png);
+	background-repeat: no-repeat;	
+	background-position: -12% 50%;
+}
+
+.banner-box-type-5 .img-box {
+	position: absolute;	
+	top: 20px;    
+	left: 60px;
+}
+
+.banner-box-type-5 .img-box > img {
+	width: 408px;
+	height: 715px;
+	transition: transform 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s, opacity 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s;
+	opacity: 0;
+	transform: translateY(100%);
+}
+
+.banner-box-type-5 .img-box.active > img {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+.banner-box-type-5 .cont-box {
+	position: absolute;
+	top: 190px;
+	left: 60px;
+}
+/* 배너박스 5 구현 끝 */
+/* 배너 1~5 구현 끝 */
+
+/* 대출박스 구현 시작 */
+.loan-box {
+	position: relative;
+	color: white;	
+}
+
+.loan-box > .con {
+	z-index: 1;
+	position: relative;
+}
+
+.loan-box > .sky {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.loan-box > .sky > .blue {
+	background-color: #559cde;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: height .7s;
+}
+
+.loan-box.active > .sky > .blue {
+	height: 0;
+}
+
+.loan-box > .sky > .moon {
+	width: 112px;
+	height: 112px;	
+	position: absolute;
+	left: calc(50% + 400px);	
+	top: 257px;	
+	overflow: hidden;
+}
+
+.loan-box > .sky > .moon > .base {	
+	width: 110px;
+	height: 110px;
+	background-color: #ffdc00;
+	border-radius: 50%;
+	transition: background-color 1s;
+}
+
+.loan-box > .sky > .moon > .shadow {
+	width: 100%;
+	height: 100%;	
+	position: absolute;
+	top: -100%;
+	left: -100%;
+	border-radius: 50%;
+	transition: top .5s .4s, left .5s .4s;
+}
+
+.loan-box.active > .sky > .moon > .shadow {
+	top: -23px;
+	left: -23px;
+	background-color: #333b58;
+}
+
+.loan-box.active > .sky > .moon > .base {
+	background-color: white;
+}
+
+/* 대출박스 - 별 시작  */
+.loan-box.active > .sky .ico-star {
+	position: absolute;
+	width: 4px;
+	height: 4px;
+	border-radius: 4px;
+	background-color: white;
+}
+
+.loan-box.active > .sky .ico-star-1 {
+	top: 30%;
+	left: 10%
+}
+
+.loan-box.active > .sky .ico-star-2 {
+	top: 10%;
+	left: 20%
+}
+
+.loan-box.active > .sky .ico-star-3 {
+	top: 25%;
+	left: 15%
+}
+
+.loan-box.active > .sky .ico-star-4 {
+	top: 40%;
+	right: 15%
+}
+
+.loan-box.active > .sky .ico-star-5 {
+	top: 43%;
+	right: 30%
+}
+
+.loan-box.active > .sky .ico-star-6 {
+	top: 73%;
+	right: 27%
+}
+
+.loan-box.active > .sky .ico-star-8 {
+	top: 65%;
+	left: 22%
+}
+
+@keyframes clittering {
+	0% {
+		opacity: 0;
+		transform: scale(0.5)
+	}
+
+	50% {
+		opacity: 1;
+		transform: scale(0.9)
+	}
+
+	100% {
+		opacity: 0;
+		transform: scale(0.5)
+	}
+}
+
+.ico-star-1 {    
+	animation: clittering 2s infinite
+}
+
+.ico-star-2 {    
+	animation: clittering 3s infinite
+}
+
+.ico-star-3 {    
+	animation: clittering 5s infinite
+}
+
+.ico-star-4 {    
+	animation: clittering 2s infinite
+}
+
+.ico-star-5 {    
+	animation: clittering 4s infinite
+}
+
+.ico-star-6 {    
+	animation: clittering 1.8s infinite
+}
+
+.ico-star-8 {    
+	animation: clittering 3.5s infinite
+}
+
+/* 대출박스 - 별 끝  */
+
+.loan-box .cont-btn-box > ul > li > a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 166px;
+	height: 52px;
+	border-radius: 10px;
+	background-color: rgba(255,255,255,0.09);	
+	font-size: 16px;	
+	color: #fff;	
+}
+
+.loan-box .cont-btn-box > ul > li:hover > a > span {
+	text-decoration: underline;
+}
+
+.loan-box .cont-btn-box > ul > li > a::after {
+	content: ">";
+	font-size: 13px;
+	margin-left: 8px;;
+}
+
+.loan-box .img-box-1 {
+	margin-top: 22px;	
+}
+
+.loan-box .img-box-1 > img {
+	display: block;
+	width: 429px;
+	height: 563px;	
+	margin: 0 auto;
+}
+/* 대출박스 구현 끝 */
+
+/* 체크카드 구현 시작 */
+.checkcard-box {
+	padding-bottom: 100px;
+}
+
+.checkcard-box .btn-box > a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #f6f6f6;
+	width: 258px;
+	height: 56px;
+	font-size: 16px;
+	line-height: 56px;
+	color: #333;
+	border-radius: 10px;	
+}
+
+.checkcard-box .btn-box > a::after {
+	content: ">";
+	font-size: 14px;
+	margin-left: 8px;
+}
+
+.checkcard-box .btn-box > a:hover > span {
+	text-decoration: underline;
+}
+
+/* 슬라이더 박스 구현 시작 */
+.checkcard-box .slider-box-1 {
+	width: 720px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+}
+
+.checkcard-box .slider-box-1 .slick .item {
+	transition: transform .3s;
+}
+
+.checkcard-box .slider-box-1 .slick .item .img-box {
+	padding-top: 60px;
+	padding-bottom: 60px;	
+}
+
+.checkcard-box .slider-box-1 .slick .item.slick-center {
+	transform: scale(1.1);			
+}
+
+.checkcard-box .slider-box-1 .btn-arrows > .btn-arrow {
+	position: absolute;	
+	top: 50%;
+	transform: translateY(-50%);
+	left: -150px;
+	cursor: pointer;
+	opacity: 0.7;
+}
+.checkcard-box .slider-box-1 .btn-arrows > .btn-arrow:hover{
+	opacity: 1;
+}
+
+.checkcard-box .slider-box-1 .btn-arrows > .btn-arrow:last-child {
+	left: auto;
+	right: -150px;
+}
+/* 슬라이더 박스 구현 끝 */
+/* 체크카드 구현 끝 */
+
+/* IT 스킬박스 구현 시작 */
+.itskill-box {
+	padding-bottom: 180px;
+	position: relative;
+	z-index: 0;
+}
+
+.itskill-box .divider {
+	margin-top: 50px;
+	height: 2px;	
+	display: flex;
+	justify-content: center;
+}
+
+.itskill-box .divider::after {
+	content: "";
+	display: block;
+	height: 100%;
+	width: 100px;
+	background-color: black;
+}
+
+.itskill-box .info-box > .img-box {	
+	display: flex;
+	justify-content: center;
+}
+
+.itskill-box .info-box > .img-box > img {
+	width: 1020px;			
+}
+
+.itskill-box .info-box::before {
+	content: "";
+	position: absolute;	
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background-color: #eee;
+	transform: translateY(122px);
+	z-index: -1;
+}
+
+.itskill-box .info-box > .cont-box-2 {		
+	display: flex;
+	justify-content: center;
+}
+
+.itskill-box .info-box > .cont-box-2 > ul {
+	width: 1020px;	
+}
+
+.itskill-box .info-box > .cont-box-2 > ul > li {	
+	text-align: center;	
+}
+
+.itskill-box .info-box > .cont-box-2 > ul > li > h2 {
+	font-size: 18px;
+	font-weight: bold;
+	margin: 45px 0 17px;
+}
+
+.itskill-box .info-box > .cont-box-2 > ul > li > .des {	
+	font-size: 14px;
+	line-height: 24px;	
+	color: #666;
+	font-weight: 200;
+}
+/* IT 스킬박스 구현 끝 */
+
+/* 하단바 구현 시작 */
+.bottom-bar {
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+.bottom-bar__info {
+	padding: 13px 0;
+}
+
+.bottom-bar__info > ul > li > a {
+	display: inline-block;
+	padding: 0 14.8px;
+	font-size: 11px;
+	font-family: '돋움',dotum,sans-serif;	
+	position: relative;	
+}
+
+.bottom-bar__info > ul > li:hover > a {
+	text-decoration: underline;
+}
+
+.bottom-bar__info > ul > li > a::after {
+	content: "";
+	position: absolute;
+	width: 1px;
+	height: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	left: calc(100% - 1px);
+	background-color: #d8d8d8;	
+}
+
+.bottom-bar__info > ul > li:nth-child(9) > a::after,
+.bottom-bar__info > ul > li:nth-child(12) > a::after {
+	display: none;
+}
+
+.bottom-bar__busi-info > span {
+	display: inline-block;
+	font-size: 12px;
+	color: #888;
+	padding: 0 5px;
+}
+
+.bottom-bar__busi-info > span:nth-child(2) {
+	color: black;
+}
+
+.bottom-bar__copy-right {
+	font-weight: bold;
+	font-size: 11px;
+	font-family: '돋움',dotum,sans-serif;
+	color: #888;
+}
+
+.bottom-bar__footer {
+	margin-top: 15px;
+}
+
+.bottom-bar__footer > a {
+	display: flex;
+	align-items: center;	
+	margin: 0 10px;
+	gap: 0 10px;
+}
+
+.bottom-bar__footer > a > span {
+	display: inline-block;
+	padding: 3px 0 0 0;
+	font-size: 13px;
+	font-weight: 600;
+	color: #666;
+}
+
+.bottom-bar__footer > a:first-child > img {
+	width: 48px;
+	height: 32px;
+}
+
+.bottom-bar__footer > a:nth-child(2) > img {
+	width: 42px;
+	height: 41px;
+}
+
+.bottom-bar__footer > .icon-sns-list > ul > li {
+	padding: 0 5px;
+}
+
+.bottom-bar__footer > .icon-sns-list > ul > li > .icon {
+	display: block;
+	background-image: url(https://kakaobank.com/static/images/web/ico_sns.png);
+	background-repeat: no-repeat;
+	width: 24px;
+	height: 24px;	
+}
+
+.bottom-bar__footer > .icon-sns-list > ul > li > .icon-facebook {
+	background-position: 0 -90px;
+}
+
+.bottom-bar__footer > .icon-sns-list > ul > li > .icon-instagram {
+	background-position: -191px -138px;
+}
+
+.bottom-bar__footer > .icon-sns-list > ul > li > .icon-youtube {
+	background-position: -90px -90px;
+}
+
+.bottom-bar__footer > .icon-sns-list > ul > li > .icon-brunch {
+	background-position: -217px -138px;
+}
+
+.bottom-bar__footer > .icon-sns-list {
+	align-self: center;
+}
+/* 하단바 구현 끝 */
